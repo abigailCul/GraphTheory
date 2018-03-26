@@ -42,5 +42,7 @@ I use println to show the testing of different outcomes.
 ## Resources i used for my project.
 
 https://web.microsoftstream.com/video/9d83a3f3-bc4f-4bda-95cc-b21c8e67675e
+
 https://web.microsoftstream.com/video/68a288f5-4688-4b3a-980e-1fcd5dd2a53b
+
 https://web.microsoftstream.com/video/68a288f5-4688-4b3a-980e-1fcd5dd2a53b
