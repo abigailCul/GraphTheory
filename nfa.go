@@ -134,27 +134,73 @@ func poregtonfa(pofix string) *nfa {
 	return nfastack[0]
 }
 
-func pomatch(po string, s string) bool {
+/*
+	Takes regular expression from postfix and any strings
+	return true if regular expressions match string
+	otherwise its returns false.
+	True if any string a,b or any number of c's including 0 or more,
+	false on anything else
+*/
+//Takes string - Return boolean back true/false value
+func pomatch(po string, InputStr string) bool {
 
+	//Creave variable ismatch by default if string doesnt match
 	ismatch := false
 
+	/*
+		variable - function called on regular expressions
+		On nfa you can be in any number of states at a given time,
+		ndfa you are always in one state
+	*/
 	ponfa := poregtonfa(po)
 
+	/*
+		Create an array of states
+		Kepp track of current states.
+	*/
 	current := []*state{}
+	/*
+		Everytime you read a character from input String inputStr
+		look at the list of current states you are in,
+		Any state i can move to along arrow
+		and any state you get along e arrow
+	*/
 	next := []*state{}
 
+	// Pass array and change it in another function - convert to slice
+	// passed by default
 	current = addState(current[:], ponfa.initial, ponfa.accept)
 
-	for _, r := range s {
+	/*
+		Loop through inputStr character at a time - r -
+		Read character from that loop through current array
+		c - current state im in
+	*/
+	for _, r := range InputStr {
 		for _, c := range current {
+			/*
+				Current is the same as I'm currently reading from
+				from inputStr. Have to ass that state along c arrows
+				and add that to next
+			*/
 			if c.symbol == r {
 				next = addState(next[:], c.edge1, ponfa.accept)
 			}
 		}
+
+		/*
+			Add c state and any state i can get to from the c state along e arrows
+		*/
 		current, next = next, []*state{}
 	}
 
+	/*
+		Loop through current array in states I am currently in
+	*/
 	for _, c := range current {
+		// the state I'm looping through in current array
+		//equals to accept state of po nfa
+		//set ismatch = true
 		if c == ponfa.accept {
 			ismatch = true
 			break
