@@ -221,11 +221,21 @@ func addState(l []*state, s *state, a *state) []*state {
 	}
 	return l
 }
-func main() {
-	fmt.Println(pomatch("ab.c*|", "ccc"))
 
-	//following 4 examples of output are tesring the 3 basic operations | , * , .
-	fmt.Println("Infix:      ", "a.b.c*")
+func main() {
+
+	var yourInput string
+	var regexp string
+	fmt.Println("Please enter the string you would like to test: ")
+	fmt.Scan(&yourInput)
+
+	fmt.Println("Please enter the Regex You want to Test the String Against: ")
+	fmt.Scan(&regexp)
+
+	fmt.Println(pomatch(regexp, yourInput))
+
+	//following 4 examples of output are testing the 3 basic operations | , * , .
+	/*fmt.Println("Infix:      ", "a.b.c*")
 	fmt.Println("postFix:    ", intPost("a.b.c*"))
 
 	fmt.Println("Infix:      ", "(a.(b|d))*")
@@ -238,11 +248,12 @@ func main() {
 	fmt.Println("postFix:    ", intPost("a.(b.b)+.c"))
 
 	nfa := poregtonfa("ab.c*|")
+
 	// print out what is returned the nfa struct
 	fmt.Println("postFix:      ", "a.(b.b)+.c")
 	fmt.Println("nfa:         ", nfa)
 
 	fmt.Println(pomatch("ab.c*|", "ccc")) //return true
-	//fmt.Println(pomatch("ab.c*|", "def")) //return false
+	//fmt.Println(pomatch("ab.c*|", "def")) //return false*/
 
 }
