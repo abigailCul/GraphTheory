@@ -39,6 +39,12 @@ I use println to show the testing of different outcomes.
 	fmt.Println(pomatch("ab.c*|", "def")) //return false
 ```
 
+I have a user input for you to enter the string and regular expression against your string.
+for example: 
+String: ccc
+Regular expression: ab.c*|
+Output: True
+
 ## Resources i used for my project.
 
 https://web.microsoftstream.com/video/9d83a3f3-bc4f-4bda-95cc-b21c8e67675e
