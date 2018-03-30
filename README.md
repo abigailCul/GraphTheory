@@ -52,3 +52,7 @@ https://web.microsoftstream.com/video/9d83a3f3-bc4f-4bda-95cc-b21c8e67675e
 https://web.microsoftstream.com/video/68a288f5-4688-4b3a-980e-1fcd5dd2a53b
 
 https://web.microsoftstream.com/video/68a288f5-4688-4b3a-980e-1fcd5dd2a53b
+
+https://stackoverflow.com/questions/20895552/how-to-read-input-from-console-line
+
+https://tutorialedge.net/golang/reading-console-input-golang/
